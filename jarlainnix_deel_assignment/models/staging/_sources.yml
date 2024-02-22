@@ -1,0 +1,9 @@
+version: 2
+
+sources:
+  - name: globepay
+    schema: deel_data
+    database: home-assignment-415017
+    tables:
+      - name: globepay_acceptance_report
+      - name: globepay_chargeback_report

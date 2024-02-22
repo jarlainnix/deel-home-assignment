@@ -1,0 +1,9 @@
+version: 2
+
+models:
+  - name: stg_globepay__acceptance_report
+    description: Acceptance table description
+    # columns:
+  - name: stg_globepay__chargeback_report
+    description: Chargeback table description
+    # columns:
