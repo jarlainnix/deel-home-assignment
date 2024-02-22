@@ -3,27 +3,19 @@ version: 2
 models:
   - name: stg_globepay__acceptance_report
     description: Acceptance table description
-    # columns:
-  - name: stg_globepay__chargeback_report
-    description: Chargeback table description
-    # columns:
-
-
-version: 2
-
-models:
-  - name: orders
     columns:
-      - name: order_id
+      - name: external_ref
         tests:
           - unique
           - not_null
-      - name: status
+      - name: acceptance_state
         tests:
           - accepted_values:
-              values: ['placed', 'shipped', 'completed', 'returned']
-      - name: customer_id
+              values: ['ACCEPTED', 'DECLINED']
+  - name: stg_globepay__chargeback_report
+    description: Chargeback table description
+    columns:
+      - name: external_ref
         tests:
-          - relationships:
-              to: ref('customers')
-              field: id
+          - unique
+          - not_null
